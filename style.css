@@ -1,0 +1,207 @@
+:root {
+  --p-rose: #fd79a8;
+  --p-violet: #a29bfe;
+  --p-teal: #00cec9;
+  --bg-deep: #050510;
+  --card-glass: rgba(255, 255, 255, 0.03);
+  --border-glass: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background: var(--bg-deep);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  perspective: 1000px;
+}
+
+/* Fixed Pattern: Layered Background */
+canvas#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: radial-gradient(circle at center, #1e1e3f 0%, #050510 100%);
+}
+
+/* Header Design */
+.header {
+  margin-top: 60px;
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  font-weight: 700;
+  background: linear-gradient(to bottom, #fff 20%, var(--p-violet) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+/* Innovative Card Pattern */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  width: 90%;
+  padding: 60px 0;
+  z-index: 10;
+}
+
+.card {
+  height: 480px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 30px;
+  border: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: var(--card-glass);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Front Face Accentuation */
+.card-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.1),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Icon Design */
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Unique Theme Colors */
+.card-1 {
+  --accent: var(--p-rose);
+}
+.card-2 {
+  --accent: var(--p-violet);
+}
+.card-3 {
+  --accent: var(--p-teal);
+}
+
+.card-face h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: var(--accent);
+  text-align: center;
+}
+
+.tag {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  border: 1px solid var(--accent);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+/* Detail Items Pattern */
+.detail-item {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid var(--accent);
+  transition: 0.3s;
+}
+
+.detail-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.02);
+}
+
+.part-name {
+  font-weight: 600;
+  color: var(--accent);
+  display: block;
+  font-size: 1rem;
+}
+.part-desc {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 0.8rem;
+  z-index: 10;
+}

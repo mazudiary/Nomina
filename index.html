@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>✧ Nomina - Cosmic Identity ✧</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="backgroundCanvas"></canvas>
+
+    <div class="header">
+      <h1 class="logo">Nomina</h1>
+      <p style="letter-spacing: 3px; color: #888">THE COSMIC ETYMOLOGY</p>
+    </div>
+
+    <div class="container">
+      <div class="card card-1" onclick="this.classList.toggle('flipped')">
+        <div class="card-face card-front">
+          <div class="icon-circle">👸</div>
+          <h2>Fazana Hossain Lopa</h2>
+          <span class="tag">The Wise One</span>
+        </div>
+        <div class="card-face card-back">
+          <div class="detail-item">
+            <span class="part-name">Fazana</span>
+            <span class="part-desc"
+              >Persian origin: Wisdom and Intelligence.</span
+            >
+          </div>
+          <div class="detail-item">
+            <span class="part-name">Hossain</span>
+            <span class="part-desc"
+              >Arabic origin: Innate Beauty and Virtue.</span
+            >
+          </div>
+          <div class="detail-item">
+            <span class="part-name">Lopa</span>
+            <span class="part-desc"
+              >Sanskrit: A learned philosopher of old.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-2" onclick="this.classList.toggle('flipped')">
+        <div class="card-face card-front">
+          <div class="icon-circle">🤴</div>
+          <h2>Basharul Alam Mazumder Rahad</h2>
+          <span class="tag">The Messenger</span>
+        </div>
+        <div class="card-face card-back">
+          <div class="detail-item">
+            <span class="part-name">Basharul Alam</span>
+            <span class="part-desc"
+              >Arabic: Human/Messenger of the Universe.</span
+            >
+          </div>
+          <div class="detail-item">
+            <span class="part-name">Mazumder</span>
+            <span class="part-desc"
+              >Sanskrit: One who is pleasant and agreeable.</span
+            >
+          </div>
+          <div class="detail-item">
+            <span class="part-name">Rahad</span>
+            <span class="part-desc"
+              >Arabic: Bringing tranquility and ease.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-3" onclick="this.classList.toggle('flipped')">
+        <div class="card-face card-front">
+          <div class="icon-circle">👶</div>
+          <h2>Farzan Inaaya Alaara</h2>
+          <span class="tag">Divine Grace</span>
+        </div>
+        <div class="card-face card-back">
+          <div class="detail-item">
+            <span class="part-name">Farzan</span>
+            <span class="part-desc"
+              >Persian: Highly learned and insightfull.</span
+            >
+          </div>
+          <div class="detail-item">
+            <span class="part-name">Inaaya</span>
+            <span class="part-desc">Arabic: Gift of Divine protection.</span>
+          </div>
+          <div class="detail-item">
+            <span class="part-name">Alaara</span>
+            <span class="part-desc">Turkic: Beautiful Water Fairy.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
